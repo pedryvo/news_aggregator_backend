@@ -1,0 +1,2 @@
+class BlogEntity < ApplicationRecord
+end
