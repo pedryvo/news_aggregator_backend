@@ -1,18 +1,31 @@
 <div class="card-columns">
 <% @posts.each do |post|%>
-  <div class="card">
+  <!-- Card Regular -->
+<div class="card card-cascade">
 
+  <!-- Card image -->
+  <div class="view view-cascade overlay">
     <%= link_to post.url do %>
       <%= image_tag post.featured_image_url, class: "card-img-top" %>
     <% end %>
-
-    <div class="card-body">
-      <h5 class="card-title"><%= post.blog_entity.name  %></h5>
-      <h6><%= link_to post.title, post.url, class: 'card-text' %></h6>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted"><%= post.created_at %></small>
-    </div>
+    <a>
+      <div class="mask rgba-white-slight"></div>
+    </a>
   </div>
+
+  <!-- Card content -->
+  <div class="card-body card-body-cascade text-center">
+
+    <!-- Subtitle -->
+    <h6 class="font-weight-bold indigo-text py-2"><%= post.blog_entity.name  %></h6>
+    <!-- Text -->
+    <p><%= link_to post.title, post.url, class: 'card-text' %></p>
+
+    <!-- Facebook -->
+    <small><%= time_ago_in_words post.created_at %></small>
+  </div>
+
+</div>
+<!-- Card Regular -->
 <% end %>
 </div>
