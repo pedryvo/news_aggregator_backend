@@ -5,9 +5,7 @@
 
   <!-- Card image -->
   <div class="view view-cascade overlay">
-    <%= link_to post.url do %>
-      <%= image_tag post.featured_image_url, class: "card-img-top" %>
-    <% end %>
+    <%= image_tag post.featured_image_url, class: "card-img-top" %>
     <a>
       <div class="mask rgba-white-slight"></div>
     </a>
@@ -19,7 +17,7 @@
     <!-- Subtitle -->
     <h6 class="font-weight-bold indigo-text py-2"><%= post.blog_entity.name  %></h6>
     <!-- Text -->
-    <p><%= link_to post.title, post.url, class: 'card-text' %></p>
+    <p><%= link_to post.title, post.url, class: 'card-text stretched-link' %></p>
 
     <!-- Facebook -->
     <small><%= time_ago_in_words post.created_at %></small>
