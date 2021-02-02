@@ -4,3 +4,6 @@ pt-BR:
       about_x_hours: 
         one: 'Uma hora atrás'
         other: "%{count} horas atrás"
+      x_minutes:
+        one: 'Um minuto atrás'
+        other: '%{count} minutos atrás'
