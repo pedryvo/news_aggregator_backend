@@ -9,7 +9,8 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 import 'bootstrap/dist/js/bootstrap.bundle'
-import 'bootstrap/dist/css/bootstrap'
+// import 'bootstrap/dist/css/bootstrap'
+require("stylesheets/bootstrap.min.css")
 require("stylesheets/application.scss")
 
 Rails.start()
