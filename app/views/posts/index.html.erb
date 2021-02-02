@@ -1,6 +1,6 @@
 <% @posts.each do |post|%>
   <h2><%= post.blog_entity.name  %></h2>
-  <h4><%= post.title %></h4>
+  <h4><%= link_to post.title, post.url %></h4>
   <p><%= post.description %></p>
   <%= image_tag post.featured_image_url %>
   <small><%= post.created_at %></small>
