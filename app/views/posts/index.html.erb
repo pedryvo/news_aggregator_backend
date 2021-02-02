@@ -1,8 +1,14 @@
+<div class="card-columns">
 <% @posts.each do |post|%>
-  <h2><%= post.blog_entity.name  %></h2>
-  <h4><%= link_to post.title, post.url %></h4>
-  <p><%= post.description %></p>
-  <%= image_tag post.featured_image_url %>
-  <small><%= post.created_at %></small>
-  <br>
+  <div class="card">
+    <%= image_tag post.featured_image_url, class: "card-img-top" %>
+    <div class="card-body">
+      <h5 class="card-title"><%= post.blog_entity.name  %></h5>
+      <p><%= link_to post.title, post.url, class: 'card-text' %></p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted"><%= post.created_at %></small>
+    </div>
+  </div>
 <% end %>
+</div>
