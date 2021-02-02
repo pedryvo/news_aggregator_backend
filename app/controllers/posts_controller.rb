@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   def index
     city = City.find(query_params[:city_id])
-    puts city.posts.size
     @posts = city.posts
   end
 
