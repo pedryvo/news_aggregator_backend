@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_01_195012) do
+ActiveRecord::Schema.define(version: 2021_02_02_005715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,17 @@ ActiveRecord::Schema.define(version: 2021_02_01_195012) do
   create_table "blog_entities", force: :cascade do |t|
     t.string "name"
     t.string "base_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "city_id", null: false
+    t.index ["city_id"], name: "index_blog_entities_on_city_id"
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.boolean "capital"
+    t.string "code"
+    t.integer "state_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -33,5 +44,20 @@ ActiveRecord::Schema.define(version: 2021_02_01_195012) do
     t.index ["blog_entity_id"], name: "index_posts_on_blog_entity_id"
   end
 
+  create_table "regions", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string "name"
+    t.string "acronym"
+    t.integer "region_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "blog_entities", "cities"
   add_foreign_key "posts", "blog_entities"
 end

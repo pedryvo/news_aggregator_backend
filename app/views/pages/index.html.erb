@@ -1,0 +1,8 @@
+<% @posts.each do |post|%>
+  <h2><%= post.blog_entity.name  %></h2>
+  <h4><%= post.title %></h4>
+  <p><%= post.description %></p>
+  <%= image_tag post.featured_image_url %>
+  <small><%= post.created_at %></small>
+  <br>
+<% end %>

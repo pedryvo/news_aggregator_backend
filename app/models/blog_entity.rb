@@ -1,5 +1,6 @@
 class BlogEntity < ApplicationRecord
   has_many :posts
+  belongs_to :city
 
   def fetch_news
     rss = RestClient.get self.base_url
