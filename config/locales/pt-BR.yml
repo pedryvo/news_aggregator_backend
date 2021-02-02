@@ -1,0 +1,6 @@
+pt-BR:
+  datetime:
+    distance_in_words:
+      about_x_hours: 
+        one: 'Uma hora atrás'
+        other: "%{count} horas atrás"
