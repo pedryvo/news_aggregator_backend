@@ -1,11 +1,13 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    city = City.find(query_params[:city_id])
+    puts city.posts.size
+    @posts = city.posts
   end
 
   private
 
   def query_params
-    params.require(:post).permit(:city_id)
+    params.permit(:city_id)
   end
 end
