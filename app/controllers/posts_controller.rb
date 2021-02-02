@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     city = City.find(query_params[:city_id])
-    @posts = city.posts
+    @posts = city.posts.order(created_at: :desc)
   end
 
   private
