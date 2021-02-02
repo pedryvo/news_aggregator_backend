@@ -3,9 +3,18 @@ class BlogEntity < ApplicationRecord
   has_many :posts
 
   def fetch_news
-    rss = RestClient.get self.base_url
     
-    feed = SimpleRSS.parse rss
+    begin
+      rss = RestClient.get self.base_url
+    rescue => e
+      puts "Rescued: #{e.inspect}"
+    end
+    
+    begin
+      feed = SimpleRSS.parse rss
+    rescue => e
+      puts "Rescued: #{e.inspect}"
+    end
     
     feed.items.each do |item|
       fetch_post = LinkThumbnailer.generate(item.link.include?('?') ?  item.link[/[^?]+/] : item.link)
