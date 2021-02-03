@@ -39,6 +39,7 @@ gem 'rest-client'
 
 # ActiveAdmin
 gem 'activeadmin'
+gem 'active_admin_theme'
 
 # Plus integrations with:
 gem 'devise'
@@ -46,6 +47,12 @@ gem 'cancancan'
 
 # ActiveAdminRole
 gem 'active_admin_role'
+
+# Ahoy
+gem 'ahoy_matey'
+
+# Chartkick
+gem 'chartkick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
