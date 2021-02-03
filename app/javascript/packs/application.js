@@ -15,9 +15,6 @@ import '@fortawesome/fontawesome-free/js/all'
 
 require("stylesheets/application.scss")
 
-require("chartkick")
-require("chart.js")
-
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
