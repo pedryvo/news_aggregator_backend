@@ -18,5 +18,12 @@ module VcaNews
     #
     config.time_zone = "Brasilia"
     config.i18n.default_locale = :"pt-BR"
+
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+         origins '*'
+         resource '*', headers: :any, methods: [:get]
+       end
+    end
   end
 end
