@@ -2,14 +2,10 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   
-  resources :cities do
-    resources :posts
-  end
-  
   namespace :api do
     namespace :v1 do
       resources :cities do
-        resources :posts, only: [:index]
+        resources :posts, only: [:index], defaults: { format: :json }
       end
     end
   end

@@ -23,7 +23,7 @@ module VcaNews
       allow do
          origins '*'
          resource '*', headers: :any, methods: [:get]
-       end
+      end
     end
   end
 end
