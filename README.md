@@ -1,3 +1,1 @@
-# VCA News
-
-Website and App.
+# News Aggregator Backend
