@@ -10,7 +10,7 @@ module Api
     class PostsController < ActionController::Base
       def index
         city = City.find(params[:city_id])
-        @posts = city.posts
+        @posts = city.posts.reverse_order
 
         paginate json: @posts, per_page: 30
       end
