@@ -1,0 +1,13 @@
+development:
+  clients:
+    default:
+      uri: mongodb+srv://mongo:lack121212@cluster0.gn97f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+      options:
+        server_selection_timeout: 5
+
+production:
+  clients:
+    default:
+      uri: mongodb+srv://mongo:lack121212@cluster0.gn97f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+      options:
+        server_selection_timeout: 5
