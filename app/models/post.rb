@@ -1,11 +1,14 @@
-class Post < ApplicationRecord
-  belongs_to :blog_entity
+class Post
+  include Mongoid::Document
+  include Mongoid::Timestamps
 
-  delegate :company, to: :employee, allow_nil: true
+  field :blog_entity_id, type: Integer
+  field :title, type: String
+  field :featured_image_url, type: String
+  field :url, type: String
+  field :description, type: String
 
-  attribute :city
-
-  def city
-    self.blog_entity.city
+  def blog_entity
+    BlogEntity.find(self.blog_entity_id)
   end
 end
