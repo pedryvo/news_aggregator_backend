@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(version: 2021_02_06_040521) do
     t.string "app_name"
   end
 
-  create_table "posts", force: :cascade do |t|
+  create_table "old_posts", force: :cascade do |t|
     t.string "title"
     t.string "featured_image_url"
     t.string "url"
