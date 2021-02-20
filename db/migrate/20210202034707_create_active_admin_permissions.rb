@@ -1,4 +1,4 @@
-class CreateActiveAdminPermissions < ActiveRecord::Migration[6.1]
+class CreateActiveAdminPermissions < ActiveRecord::Migration[6.0]
   def change
     create_table :active_admin_permissions do |t|
       t.integer :managed_resource_id, null: false
