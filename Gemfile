@@ -74,6 +74,16 @@ gem 'activeadmin-mongoid', '1.0.0'
 gem 'ransack-mongoid', github: 'activerecord-hackery/ransack-mongoid'
 gem 'cancancan-mongoid'
 
+# OJ
+gem 'oj'
+gem 'oj_mimic_json'
+
+# Memcached
+gem 'rack-cache'
+gem 'dalli'
+gem 'kgio'
+gem "memcachier"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
