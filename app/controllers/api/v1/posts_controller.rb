@@ -2,6 +2,7 @@ module Api
   module V1
     class PostsController < ActionController::Base
       def index
+        expires_in 1.minute, public: true
         params.permit(:page)
         city = City.find(params[:city_id])
         @posts_response = city.posts.page(params[:page].to_i).per(10)
