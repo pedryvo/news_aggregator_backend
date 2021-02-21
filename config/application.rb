@@ -24,7 +24,7 @@ module VcaNews
     moesif_options = {
       'application_id' => 'eyJhcHAiOiIxOTg6MTAxOCIsInZlciI6IjIuMCIsIm9yZyI6Ijg4OjE1NDEiLCJpYXQiOjE2MTIxMzc2MDB9.qNvR8FsdtPH6OiG93JkpwglyhfHyMoVnl6pTlYLT-xk'
     }
-    config.middleware.use "MoesifRack::MoesifMiddleware", moesif_options
+    config.middleware.use MoesifRack::MoesifMiddleware, moesif_options
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
