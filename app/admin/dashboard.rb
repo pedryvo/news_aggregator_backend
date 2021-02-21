@@ -9,16 +9,17 @@ ActiveAdmin.register_page "Dashboard" do
   menu priority: 1, label: proc { I18n.t("active_admin.dashboard") }
 
   content title: proc { I18n.t("active_admin.dashboard") } do
-    panel "Post gerados por dia" do
-      city = City.find(current_admin_user.city_id)
-      line_chart city.posts.group_by_hour(:created_at).count
-    end
+    # panel "Post gerados por dia" do
+    #  city = City.find(current_admin_user.city_id)
+    #  line_chart city.posts.where(schedule: nil).where(:created_at => (Time.now - 5*60*60)..(Time.now)
+    # ).count
+    # end
 
      columns do
        column do
          panel "Recent Posts" do
            ul do
-             Post.last(5).each do |post|
+             Post.all.desc('_id').limit(5).each do |post|
                li link_to(post.title, admin_post_path(post))
              end
            end

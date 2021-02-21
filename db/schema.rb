@@ -2,8 +2,8 @@
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# This file is the source Rails uses to define your schema when running `bin/rails
-# db:schema:load`. When creating a new database, `bin/rails db:schema:load` tends to
+# This file is the source Rails uses to define your schema when running `rails
+# db:schema:load`. When creating a new database, `rails db:schema:load` tends to
 # be faster and is potentially less error prone than running all of your
 # migrations from scratch. Old migrations may fail to apply correctly if those
 # migrations use external dependencies or application code.
@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 2021_02_06_040521) do
     t.bigint "author_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author"
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
-    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource"
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
   create_table "active_admin_managed_resources", force: :cascade do |t|
@@ -123,17 +123,6 @@ ActiveRecord::Schema.define(version: 2021_02_06_040521) do
     t.string "app_name"
   end
 
-  create_table "old_posts", force: :cascade do |t|
-    t.string "title"
-    t.string "featured_image_url"
-    t.string "url"
-    t.bigint "blog_entity_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.text "description"
-    t.index ["blog_entity_id"], name: "index_posts_on_blog_entity_id"
-  end
-
   create_table "regions", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -150,5 +139,4 @@ ActiveRecord::Schema.define(version: 2021_02_06_040521) do
 
   add_foreign_key "admin_users", "cities"
   add_foreign_key "blog_entities", "cities"
-  add_foreign_key "posts", "blog_entities"
 end
