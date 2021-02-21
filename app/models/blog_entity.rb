@@ -23,7 +23,7 @@ class BlogEntity < ApplicationRecord
           post_url = fetch_post.url.to_s
           post_featured_image = fetch_post.images.first.src
           post_description = fetch_post.description + '...'
-          Post.create!(title: post_title, featured_image_url: post_featured_image, url: post_url, description: post_description, blog_entity_id: self.id) unless Post.where(title: post_title).exists?
+          Post.create!(title: post_title, featured_image_url: post_featured_image, url: post_url, description: post_description, blog_entity_id: self.id, city_id: self.city.id) unless Post.where(title: post_title).exists?
         end
       end
     rescue => e

@@ -41,6 +41,10 @@ gem 'rest-client'
 gem 'activeadmin'
 gem 'active_admin_theme'
 
+# Mongoid
+gem 'mongoid'
+
+
 # Plus integrations with:
 gem 'devise'
 gem 'cancancan'
@@ -54,23 +58,21 @@ gem 'ahoy_matey'
 # Chartkick
 gem 'chartkick'
 
-# Groupdate
-gem 'groupdate'
-
 # Rack-CORS
 gem 'rack-cors'
 
-# Pagy
-gem 'pagy'
-
-# api-pagination
-gem 'api-pagination'
+# Kaminari
+gem 'kaminari'
+gem 'kaminari-mongoid'
+gem 'kaminari-actionview'
 
 # ActiveModelSerializers
 gem 'active_model_serializers', '~> 0.10.0'
 
-# Mongoid
-gem 'mongoid'
+# ActiveAdmin Mongoid
+gem 'activeadmin-mongoid', '1.0.0'
+gem 'ransack-mongoid', github: 'activerecord-hackery/ransack-mongoid'
+gem 'cancancan-mongoid'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

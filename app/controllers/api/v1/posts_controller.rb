@@ -1,18 +1,11 @@
-ApiPagination.configure do |config|
-  config.paginator = :pagy
-end
-
-include Pagy::Backend
-include Rails::Pagination
-
 module Api
   module V1
     class PostsController < ActionController::Base
       def index
+        params.permit(:page)
         city = City.find(params[:city_id])
-        @posts = city.posts #.reverse_order
-
-        paginate json: @posts, per_page: 10
+        @posts_response = city.posts.page(params[:page].to_i).per(10)
+        render json: @posts_response
       end
     end
   end

@@ -3,6 +3,6 @@ class City < ApplicationRecord
   has_many :blog_entities
   
   def posts
-    
+    Post.where(city_id: self.id)
   end
 end
