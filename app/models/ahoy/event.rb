@@ -1,8 +1,14 @@
-class Ahoy::Event < ApplicationRecord
-  include Ahoy::QueryMethods
+class Ahoy::Event
+  include Mongoid::Document
 
-  self.table_name = "ahoy_events"
+  # associations
+  belongs_to :visit, index: true
+  belongs_to :user, index: true, optional: true
 
-  belongs_to :visit
-  belongs_to :user, class_name: 'AdminUser', optional: true
+  # fields
+  field :name, type: String
+  field :properties, type: Hash
+  field :time, type: Time
+
+  index({name: 1, time: 1})
 end
