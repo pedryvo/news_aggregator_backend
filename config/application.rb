@@ -20,7 +20,8 @@ module VcaNews
     config.i18n.default_locale = :"pt-BR"
 
     config.cache_store = :mem_cache_store
-
+    config.active_job.queue_adapter = :sidekiq
+    
     moesif_options = {
       'application_id' => 'eyJhcHAiOiIxOTg6MTAxOCIsInZlciI6IjIuMCIsIm9yZyI6Ijg4OjE1NDEiLCJpYXQiOjE2MTIxMzc2MDB9.qNvR8FsdtPH6OiG93JkpwglyhfHyMoVnl6pTlYLT-xk'
     }
