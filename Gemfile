@@ -90,11 +90,8 @@ gem 'moesif_rack'
 # Rack::Timeout
 gem 'rack-timeout'
 
-# DelayedJob ActiveRecord Backend
-gem 'delayed_job_active_record'
-
-# delayed_job_web
-gem "delayed_job_web"
+# Sidekiq-Cron
+gem "sidekiq-cron", "~> 1.1"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
