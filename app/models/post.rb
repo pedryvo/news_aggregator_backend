@@ -2,6 +2,8 @@ class Post
   include Mongoid::Document
   include Mongoid::Timestamps
 
+  belongs_to :blog_entity
+
   field :city_id, type: Integer
   field :blog_entity_id, type: Integer
   field :title, type: String

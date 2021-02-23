@@ -1,7 +1,6 @@
 class BlogEntity < ApplicationRecord
   belongs_to :city
-  has_many :posts
-
+  
   def posts
     Post.where(blog_entity_id: self.id).order_by({created_at: -1})
   end

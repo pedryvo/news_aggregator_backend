@@ -3,7 +3,6 @@ class Ahoy::Visit
 
   # associations
   has_many :events, class_name: "Ahoy::Event"
-  belongs_to :user, index: true, optional: true
 
   # required
   field :visit_token, type: String

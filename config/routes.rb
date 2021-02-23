@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
 
+  devise_for :users
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
   namespace :api do
     namespace :v1 do
       resources :cities do

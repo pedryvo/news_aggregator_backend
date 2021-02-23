@@ -37,20 +37,21 @@ gem 'simple-rss'
 # RestClient
 gem 'rest-client'
 
-# ActiveAdmin
-gem 'activeadmin'
-gem 'active_admin_theme'
+# Devise and Cancancan
+gem 'devise'
+gem 'devise-i18n'
+gem 'cancancan'
+
+# Devise Bootstrap Views
+gem 'devise-bootstrap-views', '~> 1.0'
 
 # Mongoid
 gem 'mongoid'
 
-
-# Plus integrations with:
-gem 'devise'
-gem 'cancancan'
-
-# ActiveAdminRole
-gem 'active_admin_role'
+# RailsAdmin
+gem 'rails_admin', '~> 2.0'
+gem 'rails_admin_rollincode', '~> 1.0'
+gem 'rails_admin-i18n'
 
 # Ahoy
 gem 'ahoy_matey'
@@ -68,11 +69,6 @@ gem 'kaminari-actionview'
 
 # ActiveModelSerializers
 gem 'active_model_serializers', '~> 0.10.0'
-
-# ActiveAdmin Mongoid
-gem 'activeadmin-mongoid', '1.0.0'
-gem 'ransack-mongoid', github: 'activerecord-hackery/ransack-mongoid'
-gem 'cancancan-mongoid'
 
 # OJ
 gem 'oj'
@@ -108,6 +104,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'pry'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'better_errors-pry'
 end
 
 group :test do
