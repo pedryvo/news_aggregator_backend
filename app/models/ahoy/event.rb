@@ -3,7 +3,6 @@ class Ahoy::Event
 
   # associations
   belongs_to :visit, index: true
-  belongs_to :user, index: true, optional: true
 
   # fields
   field :name, type: String
